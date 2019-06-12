@@ -1,0 +1,130 @@
+.wrapper {
+  /* margin: 15px auto; */
+  max-width: 100% !important;
+}
+
+.container-calendar {
+  /* background: #ffffff;
+  padding: 15px;
+  max-width: 475px;
+  margin: 0 auto;
+  overflow: auto; */
+}
+
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+tr {
+  position: relative;
+}
+
+th {
+  text-align: right;
+  color: #999;
+  font-weight: normal;
+  font-size: 0.85em;
+}
+
+td {
+  width: 14.28571429%;
+}
+
+.date {
+  text-align: right;
+  display: block;
+  height: 0;
+  font-size: 0.8em;
+  padding: 0.25em;
+  padding-bottom: 73%;
+  position: relative;
+  border-bottom: 1px solid #dedbdb;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+#thead-month {
+  background: #424242;
+  color: #FFF;
+}
+
+.table-calendar td, .table-calendar th {
+  padding: 5px;
+  border: 1px solid #e2e2e2 !important;
+  text-align: center;
+  vertical-align: top;
+}
+
+.date-picker.selected {
+  font-weight: bold;
+  outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* sunday */
+.date-picker:nth-child(1) {
+  color: red !important;
+}
+
+/* friday */
+.date-picker:nth-child(6) {
+  color: green;
+}
+
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+
+/* //////////////////////////////// */
+.lmeses {
+  width: 100% !important;
+  height: 5% !important;
+}
+
+.txtmes {
+  width: 14.28% !important;
+  float: left !important;
+  text-align: center !important;
+  background: #424242 !important;
+  color: #FFF !important;
+}
+
+#txtmes {
+  width: 14.28% !important;
+  float: left !important;
+  text-align: center !important;
+  background: #424242 !important;
+  color: #FFF !important;
+}

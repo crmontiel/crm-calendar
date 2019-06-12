@@ -17,6 +17,26 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mpricing": [
+        "dist/mpricing"
+      ],
+      "mpricing/*": [
+        "dist/mpricing/*"
+      ],
+      "m-calendar": [
+        "dist/m-calendar"
+      ],
+      "m-calendar/*": [
+        "dist/m-calendar/*"
+      ],
+      "crm-calendar": [
+        "dist/crm-calendar"
+      ],
+      "crm-calendar/*": [
+        "dist/crm-calendar/*"
+      ]
+    }
   }
 }

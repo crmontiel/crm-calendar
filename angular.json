@@ -114,6 +114,111 @@
           }
         }
       }
+    },
+    "MPricing": {
+      "projectType": "library",
+      "root": "projects/mpricing",
+      "sourceRoot": "projects/mpricing/src",
+      "prefix": "MPri",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mpricing/tsconfig.lib.json",
+            "project": "projects/mpricing/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mpricing/src/test.ts",
+            "tsConfig": "projects/mpricing/tsconfig.spec.json",
+            "karmaConfig": "projects/mpricing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mpricing/tsconfig.lib.json",
+              "projects/mpricing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "m-calendar": {
+      "projectType": "library",
+      "root": "projects/m-calendar",
+      "sourceRoot": "projects/m-calendar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/m-calendar/tsconfig.lib.json",
+            "project": "projects/m-calendar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/m-calendar/src/test.ts",
+            "tsConfig": "projects/m-calendar/tsconfig.spec.json",
+            "karmaConfig": "projects/m-calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/m-calendar/tsconfig.lib.json",
+              "projects/m-calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "crm-calendar": {
+      "projectType": "library",
+      "root": "projects/crm-calendar",
+      "sourceRoot": "projects/crm-calendar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/crm-calendar/tsconfig.lib.json",
+            "project": "projects/crm-calendar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/crm-calendar/src/test.ts",
+            "tsConfig": "projects/crm-calendar/tsconfig.spec.json",
+            "karmaConfig": "projects/crm-calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/crm-calendar/tsconfig.lib.json",
+              "projects/crm-calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "mcalendar"
 }
