@@ -96,37 +96,30 @@ export class CrmCalendarComponent implements OnInit {
       for (var j = 0; j < 7; j++) {
 
         if (i === 0 && j < firstDay) {
-          row = row + "<div style='width: 14.28% !important;float: left !important;text-align: center !important;background: #42424242 !important;color: #FFF !important;height: 100px;'></div>"
+          row = row + "<div class='boxfecha dantes'></div>"
           // var cell = document.createElement("div");
-
         } else if (date > this.daysInMonth(mes, anio)) {
           break;
         } else {
-          row = row + "<div style='width: 14.28% !important;float: left !important;text-align: center !important;background: #424242 !important;color: #FFF !important;height: 100px;'>" + "<span>" + date + "</span>" + "</div>"
+          row = row + `<div class="boxfecha dmes" id="date${this.yearnow}${this.yearnow}${date}"><span class="txtdia">${date}</span><div class="boxcita" id="citas${this.yearnow}${this.yearnow}${date}"></div></div>`
           // cell = document.createElement('div');
-
           // cell.innerHTML = "<span  class='date'>" + date + "</span>";
           // if (date === this.today.getDate() && anio === this.today.getFullYear() && mes === this.today.getMonth()) {
           //   cell.setAttribute('style', 'font-weight: bold;    background: #00BCD4;color:#FFF;');
           // }
           date++;
         }
-
         rowDays++;
       }//--Fin dias
       if (i == 5) {
         for (var id = 1; id <= 42 - rowDays; id++) {
-          row = row + "<div style='width: 14.28% !important;float: left !important;text-align: center !important;background: #42424242 !important;color: #FFF !important;height: 100px;'>" + id + "</div>"
+          // row = row + "<div class='boxfecha dtantes'>" + id + "</div>"
+          // row = row + "<div class='boxfecha dantes'><span class='txtdia'>" + id + "</span></div>"
         }
       }
       row = row + "</div>"
-
-
     }
-
-
     tbl.innerHTML = row;
-
   }
 
   daysInMonth(mes, anio) {
