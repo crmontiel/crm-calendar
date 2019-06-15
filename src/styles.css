@@ -1,39 +1,303 @@
-.boxfecha {
-  width: 14.1% !important;
-  float: left !important;
-  text-align: center !important;
-  color: #FFF !important;
-  height: 100px;
-  margin-left: 0.03%;
-  margin-right: 0.03%;
-  margin-bottom: 0.03%;
-  margin-top: 0.03%;
-  background: #42424242;
+.wrapper {
+  margin: 15px auto;
+  max-width: 1100px;
 }
 
-.dantes {
-  background: #00000026 !important;
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  max-width: 475px;
+  margin: 0 auto;
+  overflow: auto;
 }
 
-.dmes {
-  background: #FFF !important;
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
 }
 
-.txtdia {
-  font-size: 1.2rem !important;
-  float: right;
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-calendar td, .table-calendar th {
+  padding: 5px;
+  border: 1px solid #e2e2e2;
   text-align: center;
-  width: 6% !important;
-  background: #0496ffad;
-  color: #ffffff;
-  height: 18% !important;
-  padding: 2% 3% 3% !important;
-  border-radius: 75% !important;
-  font-weight: bold;
-  margin-top: 1% !important;
-  margin-right: 1% !important;
+  vertical-align: top;
 }
 
-.boxdcita {
-  background: blue;
+.date-picker.selected {
+  font-weight: bold;
+  outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* sunday */
+.date-picker:nth-child(1) {
+  color: red;
+}
+
+/* friday */
+.date-picker:nth-child(6) {
+  color: green;
+}
+
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+  text-align: right !important;
+}
+
+#previous {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+#nowday {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+#next {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+.footer-container-calendar select {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+
+tbody td {
+  height: 85px !important;
+  position: relative;
+}
+
+/* td {
+  position: relative;
+} */
+td span {
+  float: right !important;
+}
+
+td:hover {
+  background: #42424233;
+  /* background: #42424242; */
+  cursor: pointer;
+}
+
+.nc {
+  cursor: default !important;
+}
+
+.nc:hover {
+  cursor: default !important;
+}
+
+.mas {
+  background: rgb(0, 176, 79) !important;
+}
+
+.mas:hover {
+  background: rgb(54, 217, 127) !important;
+}
+
+.itemcita {
+  width: 100% !important;
+  font-size: 14px;
+  color: #FFF;
+  background: rgb(54, 192, 217);
+  float: left;
+  margin-bottom: 2px !important;
+}
+
+.itemcita:hover {
+  cursor: pointer !important;
+}
+
+.bgtxtdia {
+  width: 100% !important;
+  height: 85px !important;
+  font-size: 3.9rem;
+  /* display: none; */
+  color: #42424242;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.txtd {
+  /* display: none; */
+}
+
+.nv {
+  display: none !important;
+}
+
+.lcitas {
+  z-index: 999 !important;
+  /* background: rgba(235, 57, 57, 0.48) !important; */
+  width: 93% !important;
+  height: 60px;
+  margin-top: 20px;
+  display: block;
+  text-decoration: none !important;
+  position: absolute;
+}
+
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+h1 {
+  margin: 80px 0
+}
+
+.btn {
+  background: #428bca;
+  border: #357ebd solid 0px;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  position: relative;
+  transition: color .1s ease;
+}
+
+.btn:hover {
+  background: #357ebd;
+}
+
+.btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+}
+
+.btn-close {
+  color: #aaaaaa;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+}
+
+.btn-close:hover {
+  color: #919191;
+}
+
+.crm-mobox:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.opened:before {
+  display: block;
+}
+
+.opened .crm-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+
+.crm-dialog {
+  background: #fefefe;
+  border: #333333 solid 0px;
+  border-radius: 5px;
+  margin-left: -200px;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 360px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.crm-body {
+  padding: 20px;
+}
+
+.crm-body input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  color: #888;
+  outline: 0;
+  font-size: 14px;
+  font-weight: bold
+}
+
+.crm-header,
+.crm-footer {
+  padding: 10px 20px;
+}
+
+.crm-header {
+  border-bottom: #eeeeee solid 1px;
+}
+
+.crm-header h2 {
+  font-size: 20px;
 }

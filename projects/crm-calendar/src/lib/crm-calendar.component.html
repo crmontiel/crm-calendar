@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <h3 id="monthAndYear"></h3>
+  <div class="button-container-calendar">
+    <button id="next" (click)="next()">&#8250;</button>
+    <button id="nowday" (click)="nowday()">{{diatexto}}</button>
+    <button id="previous" (click)="previous()">&#8249;</button>
+  </div>
+
+  <table class="table-calendar" id="calendar" data-lang="en">
+    <thead id="thead-month"></thead>
+    <tbody id="calendar-body">
+      <!-- <tr>
+        <td>kndnd</td>
+        <td>kndnd</td>
+        <td>kndnd</td>
+        <td>kndnd</td>
+        <td>kndnd</td>
+        <td>kndnd</td>
+        <td>kndnd</td>
+      </tr> -->
+      <tr *ngFor="let i of ArrayDays;let p=index">
+        <!-- <td>HOLA {{i|json}}</td> -->
+        <td *ngFor="let d of ArrayDays[p].dias" [attr.data-date]="d.id" [attr.id]="'f'+ d.id" class="date-picker">
+          <span class="txtd nv" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true}" [attr.id]="'t'+ d.id">{{d.dia}}</span>
+          <span class="bgtxtdia" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true}" (click)="clickAgrega('bg'+ d.id)" [attr.id]="'bg'+ d.id">{{d.dia}}</span>
+          <div class="lcitas nv" *ngIf="d.dia!=0" [attr.id]="'lc'+ d.id"></div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="crm-mobox" aria-hidden="true" id="crm-mobox">
+  <div class="crm-dialog">
+    <div class="crm-header">
+      <h2>Please Login</h2>
+      <a href="#" class="btn-close closecrm-mobox" aria-hidden="true">&times;</a>
+    </div>
+    <div class="crm-body">
+      <input type="text" name="u" placeholder="User" size="20" /><br>
+      <input type="text" name="p" placeholder="&bull;&bull;&bull;&bull;" size="20" /></div>
+    <div class="crm-footer">
+
+      <a href="#" class="btn" id="btn_ingresar">Login</a>
+    </div>
+  </div>
+</div>
