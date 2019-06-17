@@ -162,6 +162,8 @@ td:hover {
 
 .txtd {
   /* display: none; */
+  color: #42424242;
+  font-weight: bold;
 }
 
 .nv {

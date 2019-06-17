@@ -7,20 +7,6 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class CrmCalendarComponent implements OnInit, OnChanges {
   @Input() citas;
-  constructor() { }
-
-  async ngOnInit() {
-    await this.generaCalendario()
-    await this.newCita(this.citas)
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
-    if (changes["citas"]) {
-      console.log("NUEVAS")
-    }
-  }
-
-
   diatexto = ""
   today = new Date()
   yearnow = this.today.getFullYear();
@@ -39,6 +25,18 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
   @Input() lang
   vDay = 0
 
+  constructor() { }
+
+  async ngOnInit() {
+    await this.generaCalendario()
+    await this.newCita(this.citas)
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+    if (changes["citas"]) {
+      console.log("NUEVAS")
+    }
+  }
 
   generaCalendario() {
     var calendar = document.getElementById("calendar");
@@ -281,7 +279,11 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
     console.log(document.getElementById(date))
     let modal = document.getElementById('crm-mobox');
     modal.classList.add('opened')
+  }
 
+  cierra() {
+    let modal = document.getElementById('crm-mobox');
+    modal.classList.remove('opened')
   }
 
 

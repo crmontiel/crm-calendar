@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
 
   }
-  citas = [
+  c = [
     {
       date: '15/7/2019',
       list: [
@@ -53,12 +53,12 @@ export class AppComponent implements OnInit {
   ]
 
   mas() {
-    this.citas[0].list.push({
+    this.c[0].list.push({
       hour: '11:00',
       txt: 'MAS',
       id: '0102-1997-00059'
     })
-    console.log(this.citas)
+    console.log(this.c)
   }
   //   title = 'mcalendar';
   //   data = [{
