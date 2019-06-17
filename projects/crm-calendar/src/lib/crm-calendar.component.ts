@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'crm-calendar',
@@ -17,12 +17,16 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
   monthAndYear
   months;
   days;
+  noex = true
   ArrayDays = [
     {
       dias: []
     }
   ]
   @Input() lang
+  @Output() agrega: EventEmitter<any> = new EventEmitter<any>();
+  @Output() vC: EventEmitter<any> = new EventEmitter<any>();
+  @Output() vM: EventEmitter<any> = new EventEmitter<any>();
   vDay = 0
 
   constructor() { }
@@ -32,10 +36,10 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
     await this.newCita(this.citas)
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
-    if (changes["citas"]) {
-      console.log("NUEVAS")
-    }
+    // console.log(changes)
+    // if (changes["citas"]) {
+    //   console.log("NUEVAS")
+    // }
   }
 
   generaCalendario() {
@@ -207,36 +211,41 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
   }
 
   async next() {
-    this.ArrayDays = []
+    this.ArrayDays = [{ dias: [] }]
     this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
     this.currentMonth = (this.currentMonth + 1) % 12;
     await this.mostrarCalendario(this.currentMonth, this.currentYear);
-
-
+    this.citas = await this.citas
+    // await this.newCita(this.citas)
   }
 
   async nowday() {
-    this.ArrayDays = []
+    this.today = new Date()
+    this.yearnow = this.today.getFullYear();
+    this.currentMonth = this.today.getMonth();
+    this.currentYear = this.today.getFullYear();
+    this.selectYear = this.yearnow;
+    this.selectMonth = this.today.getMonth();
+    this.ArrayDays = [{ dias: [] }]
     await this.generaCalendario()
-    await this.newCita(this.citas)
-
-
+    // await this.newCita(this.citas)
+    this.citas = await this.citas
   }
 
 
   async previous() {
-    this.ArrayDays = []
+    this.ArrayDays = [{ dias: [] }]
     this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
     this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
     await this.mostrarCalendario(this.currentMonth, this.currentYear);
-    await this.newCita(this.citas)
-
-
-
+    // await this.newCita(this.citas)
+    this.citas = await this.citas
   }
 
 
   async newCita(citas: any) {
+    return;
+
     if (citas.length == undefined) {
       return
     }
@@ -258,14 +267,15 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
         var lcitas = ''
         var cl = document.getElementById(`lc${citas[i].date}`)
         cl.classList.remove('nv')
-        for (var lc = 0; lc < citas[i].list.length; lc++) {
-          lcitas = lcitas + `<span class="itemcita">${citas[i].list[lc].hour} - ${citas[i].list[lc].txt}</span>`
-          if (lc == 2 && citas[i].list.length - 1 > lc) {
-            lcitas = lcitas + `<span class="itemcita mas">Ver todas</span>`
-            lc = citas[i].list.length
-          }
-        }
-        cl.innerHTML = lcitas
+        console.log(`lc${citas[i].date}`)
+        // for (var lc = 0; lc < citas[i].list.length; lc++) {
+        //   lcitas = lcitas + `<span class="itemcita" >${citas[i].list[lc].hour} - ${citas[i].list[lc].txt}</span>`
+        //   if (lc == 2 && citas[i].list.length - 1 > lc) {
+        //     lcitas = lcitas + `<span class="itemcita mas">Ver todas</span>`
+        //     lc = citas[i].list.length
+        //   }
+        // }
+        // cl.innerHTML = lcitas
 
       }
 
@@ -273,18 +283,38 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
 
   }
 
+  existe(fecha): boolean {
+    let ex = true
+    for (var i = 0; i < this.citas.length; i++) {
+      if (this.citas[i].date == fecha) {
+        ex = false
+      }
+    }
+    return ex;
+  }
 
   clickAgrega(date) {
-    console.log(date)
-    console.log(document.getElementById(date))
-    let modal = document.getElementById('crm-mobox');
-    modal.classList.add('opened')
+    let dia = this.today.getDay();
+    let mes = this.today.getMonth();
+    let anio = this.today.getFullYear();
+    let v = date.split("/")
+    v[0] / +v[1] / +v[2]
+    if (dia >= v[0]) {
+
+    }
+
+    // console.log(hoy - click)
+
+    // if (hoy - click <= - 0.0013) {
+    //   this.agrega.emit(date)
+    // }
   }
 
-  cierra() {
-    let modal = document.getElementById('crm-mobox');
-    modal.classList.remove('opened')
+  verCita(fecha, id) {
+    let v = { fecha: fecha, id: id }
+    this.vC.emit(v)
   }
-
-
+  verMas(fecha) {
+    this.vM.emit(fecha)
+  }
 }

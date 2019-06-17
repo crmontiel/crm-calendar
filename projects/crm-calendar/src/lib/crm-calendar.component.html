@@ -21,31 +21,20 @@
       <tr *ngFor="let i of ArrayDays;let p=index">
         <!-- <td>HOLA {{i|json}}</td> -->
         <td *ngFor="let d of ArrayDays[p].dias" [attr.data-date]="d.id" [attr.id]="'f'+ d.id" class="date-picker">
-          <span class="txtd nv" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true}" [attr.id]="'t'+ d.id">{{d.dia}}</span>
-          <span class="bgtxtdia" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true}" (click)="clickAgrega('bg'+ d.id)" [attr.id]="'bg'+ d.id">{{d.dia}}</span>
-          <div class="lcitas nv" *ngIf="d.dia!=0" [attr.id]="'lc'+ d.id"></div>
-
+          <span class="txtd" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'t'+ d.id">{{d.dia}}</span>
+          <span class="bgtxtdia" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': !existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'bg'+ d.id">{{d.dia}}</span>
+          <div class="lcitas" [ngClass]="{'nv': existe(d.id)}" *ngIf="d.dia!=0" [attr.id]="'lc'+ d.id">
+            <div *ngFor="let c of citas;let ci=index">
+              <div *ngIf="c.date==d.id">
+                <div *ngFor="let cspan of c.list;let ci=index">
+                  <span class="itemcita" *ngIf="ci<=2" (click)="verCita(d.id,cspan.id)">{{cspan.hour}} {{cspan.txt}} </span>
+                  <span class="itemcita mas" *ngIf="ci==3" (click)="verMas(d.id)">Ver mas </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
-
-
-<div class="crm-mobox" aria-hidden="true" id="crm-mobox">
-  <div class="crm-dialog">
-    <div class="crm-header">
-      <h2>Nueva cita para</h2>
-      <a href="#" class="btn-close closecrm-mobox" (click)="cierra()" aria-hidden="true">&times;</a>
-    </div>
-    <div class="crm-body">
-      <input type="text" name="u" placeholder="Identidad" size="20" /><br>
-      <input type="text" name="p" placeholder="&bull;&bull;&bull;&bull;" size="20" /></div>
-    <input type="text" name="p" placeholder="&bull;&bull;&bull;&bull;" size="20" />
-  </div>
-  <div class="crm-footer">
-
-    <a href="#" class="btn" id="btn_ingresar"></a>
-  </div>
-</div>
 </div>

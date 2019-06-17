@@ -1,4 +1,22 @@
-<crm-calendar [lang]="'es'" [citas]="c"></crm-calendar>
+<crm-calendar [lang]="'es'" [citas]="c" (agrega)="nuevaCita($event)" (vC)="verCita($event)" (vM)="verCitasDia($event)"></crm-calendar>
 
 
-<button type="button" name="button" (click)="mas()"> mas</button>
+<button type="button" name="button" (click)="modal()"></button>
+
+<div id="boxmodalDefault" class="boxmodal">
+  <div class="boxmodal-content" id="box-c">
+    <div class="boxmodal-header header-default">
+      <span class="boxmodal-header-title">Agendar nueva cita {{boxfecha}}</span>
+      <a (click)="cierraModal()" class="header-btn-close">&#215;</a>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="boxmodalDark" class="boxmodal">
+  <div class="boxmodal-content">
+    <div class="boxmodal-header header-dark">
+      <span class="boxmodal-header-title">Dark!</span>
+      <a href="#/close" class="header-btn-close">&#215;</a>
+    </div>
+  </div>
+</div> -->
