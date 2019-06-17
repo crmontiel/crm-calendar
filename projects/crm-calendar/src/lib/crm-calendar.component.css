@@ -1,0 +1,194 @@
+.wrapper {
+  margin: 15px auto;
+  max-width: 1100px;
+}
+
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  max-width: 475px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+#thead-month {
+  background: #424242 !important;
+  color: #FFF !important;
+  font-size: 1.2rem !important;
+}
+
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-calendar td, .table-calendar th {
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+
+.date-picker.selected {
+  font-weight: bold;
+  outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* sunday */
+.date-picker:nth-child(1) {
+  color: red;
+}
+
+/* friday */
+.date-picker:nth-child(6) {
+  color: green;
+}
+
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+  text-align: right !important;
+}
+
+#previous {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+#nowday {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+#next {
+  float: right !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+.footer-container-calendar select {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+
+tbody td {
+  height: 85px !important;
+  position: relative;
+}
+
+/* td {
+  position: relative;
+} */
+td span {
+  float: right !important;
+}
+
+td:hover .bgtxtdia, .txtd:hover {
+  background: #42424233;
+  /* background: #42424242; */
+  cursor: pointer;
+}
+
+.nc {
+  cursor: default !important;
+}
+
+.nc:hover {
+  cursor: default !important;
+}
+
+.mas {
+  background: rgb(0, 176, 79) !important;
+}
+
+.mas:hover {
+  background: rgb(54, 217, 127) !important;
+}
+
+.itemcita {
+  width: 100% !important;
+  font-size: 14px;
+  color: #FFF;
+  background: rgb(36, 160, 182);
+  float: left;
+  margin-bottom: 2px !important;
+}
+
+.itemcita:hover {
+  background: rgb(42, 194, 222);
+}
+
+.itemcita:hover {
+  cursor: pointer !important;
+}
+
+.bgtxtdia {
+  width: 100% !important;
+  height: 85px !important;
+  font-size: 3.9rem;
+  /* display: none; */
+  color: #42424242;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.txtd {
+  /* display: none; */
+  color: #42424242;
+  font-weight: bold !important;
+  width: 100%;
+  text-align: right;
+}
+
+.nv {
+  display: none !important;
+}
+
+.lcitas {
+  z-index: 0 !important;
+  /* background: rgba(235, 57, 57, 0.48) !important; */
+  width: 93% !important;
+  height: 60px;
+  margin-top: 20px;
+  display: block;
+  text-decoration: none !important;
+  position: absolute;
+}
