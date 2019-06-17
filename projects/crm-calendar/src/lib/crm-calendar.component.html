@@ -5,21 +5,10 @@
     <button id="nowday" (click)="nowday()">{{diatexto}}</button>
     <button id="previous" (click)="previous()">&#8249;</button>
   </div>
-
   <table class="table-calendar" id="calendar" data-lang="en">
     <thead id="thead-month"></thead>
     <tbody id="calendar-body">
-      <!-- <tr>
-        <td>kndnd</td>
-        <td>kndnd</td>
-        <td>kndnd</td>
-        <td>kndnd</td>
-        <td>kndnd</td>
-        <td>kndnd</td>
-        <td>kndnd</td>
-      </tr> -->
       <tr *ngFor="let i of ArrayDays;let p=index">
-        <!-- <td>HOLA {{i|json}}</td> -->
         <td *ngFor="let d of ArrayDays[p].dias" [attr.data-date]="d.id" [attr.id]="'f'+ d.id" class="date-picker">
           <span class="txtd" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'t'+ d.id">{{d.dia}}</span>
           <span class="bgtxtdia" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': !existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'bg'+ d.id">{{d.dia}}</span>

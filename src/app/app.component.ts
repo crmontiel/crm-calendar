@@ -9,15 +9,39 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   boxfecha = ""
   constructor() {
-    console.log(new Date('6/17/2019', ))
 
+    console.log(this.validaFecha('16/6/2019', '17/6/2019'))
+    console.log(new Date().getMonth())
 
   }
 
   ngOnInit() {
-
-
   }
+  validaFecha(n1, n2) {
+    let re = false
+    let f1 = n1.split('/')
+    let f2 = n2.split('/')
+
+    if (+f1[2] > +f2[2]) { //anio mayor
+      re = true;
+      console.log("#1")
+    } else if (+f1[2] == +f2[2]) { //anio igual
+
+      if (+f1[1] > +f2[1]) {// mes mayor
+        re = true;
+      } else if (+f1[1] == +f2[1]) {
+
+        if (+f1[0] >= +f2[0]) {
+          re = true;
+        }
+      }
+
+    }
+    return re;
+  }
+
+
+
   c = [
     {
       date: '25/6/2019',
@@ -73,6 +97,7 @@ export class AppComponent implements OnInit {
     document.getElementById('box-c').classList.add('boxmo')
   }
   verCita(datos) {
+    console.log(datos)
   }
   cierraModal() {
     document.getElementById('boxmodalDefault').classList.remove('bxopen')
