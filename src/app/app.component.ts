@@ -103,6 +103,7 @@ export class AppComponent implements OnInit {
   cierraModal() {
     document.getElementById('boxmodalDefault').classList.remove('bxopen')
     document.getElementById('box-c').classList.remove('boxmo')
+    document.getElementsByName('id')
   }
 
 
