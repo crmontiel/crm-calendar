@@ -1,18 +1,3 @@
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* /////////////////////////////////////////////////////////////////// */
-/* * {
-  box-sizing: border-box;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-} */
 .boxmodal {
   align-items: center;
   background-color: rgba(52, 73, 94, .6);
@@ -122,3 +107,137 @@
   height: 75%;
   width: 100%;
 }
+
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
+.bodybox {
+  padding: 2% !important;
+}
+
+textarea {
+  display: block;
+  width: 315px;
+  padding: 14px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #42424242;
+  margin-bottom: 12px;
+  color: #7f8c8d;
+  font-weight: 600;
+  font-size: 16px;
+  resize: none;
+}
+
+input {
+  display: block;
+  width: 315px;
+  padding: 14px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #42424242;
+  margin-bottom: 12px;
+  color: #7f8c8d;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+input:focus {
+  border: none;
+  background: #fafafa;
+}
+
+.box-datos {
+  width: 48% !important;
+  height: 90% !important;
+  float: left;
+  border-right: 1px solid #42424242 !important;
+}
+
+.txt-hora {
+  text-align: center;
+  width: 50% !important;
+  font-size: 1.3rem;
+  color: #424242;
+  font-weight: bold;
+  padding-left: 10% !important;
+  margin-bottom: 5px !important;
+}
+
+.box-hora {
+  width: 48% !important;
+  height: 90% !important;
+  float: left;
+  /* background: blue; */
+}
+
+.botont {
+  position: absolute;
+  bottom: 0px !important;
+  width: 95% !important;
+  float: left;
+  height: 10% !important;
+}
+
+.btn-termina {
+  background: #3498db;
+  color: #FFF;
+  font-weight: bold;
+  padding: 7px;
+  float: right;
+  border: 2px solid #2989c9 !important;
+  border-radius: 5px !important;
+}
+
+/* //////////////////// */
+.calender-hora {
+  /* width: 400px; */
+  list-style: none;
+  margin: 5px auto;
+}
+
+.time {
+  display: ;
+  float: left !important;
+  width: 20% !important;
+  background: #E0E0E0;
+  height: 10% !important;
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  vertical-align: middle !important;
+  padding-top: 1% !important;
+  border: 1px solid #42424242 !important;
+  /* border-left: 1px solid #656565;
+  border-right: 0.5px solid #656565;
+  border-top: 0.5px solid #656565;
+  border-bottom: 0.5px solid #656565;
+  border-right: 0.5px solid #656565; */
+  cursor: pointer;
+  -webkit-transition: 200ms ease-in-out 50ms;
+  -moz-transition: 200ms ease-in-out 50ms;
+  transition: 200ms ease-in-out 50ms;
+}
+
+.dere {
+  /* border-right: 1px solid #656565 !important; */
+}
+
+li:hover {
+  background: #656565;
+  color: #fff;
+  border: 1px solid #656565;
+  /* box-shadow: 0px 1px 9px rgba(50, 50, 50, 0.82); */
+}
+
+/* ////////////////////////////// */
+/* ////////////////////////////// */
+/* ////////////////////////////// */
+/* ////////////////////////////// */
+/* ////////////////////////////// */
+/* ////////////////////////////// */
+/* ////////////////////////////// */

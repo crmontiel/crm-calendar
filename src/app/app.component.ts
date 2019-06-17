@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   boxfecha = ""
+  hora: ""
   constructor() {
 
     console.log(this.validaFecha('16/6/2019', '17/6/2019'))
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
 
   c = [
     {
-      date: '25/6/2019',
+      date: '25/7/2019',
       list: [
         {
           hour: '10:00',
@@ -104,18 +105,43 @@ export class AppComponent implements OnInit {
     document.getElementById('box-c').classList.remove('boxmo')
   }
 
-  modal() {
 
-    this.c[0].list.push({
-      hour: '11:00',
-      txt: 'MAS',
-      id: '0102-1997-00059'
-    })
-  }
 
   verCitasDia(datos) {
     console.log(datos)
   }
+
+  agendar(id, nombre) {
+    let agrego = 0
+    this.c.forEach(item => {
+      if (item.date == this.boxfecha) {
+        agrego = 1
+        item.list.push({
+          hour: this.hora,
+          txt: nombre,
+          id: id
+        })
+      }
+    })
+    if (agrego == 0) {
+      this.c.push(
+        {
+          date: this.boxfecha,
+          list: [
+            {
+              hour: this.hora,
+              txt: nombre,
+              id: id
+            }
+          ]
+        }
+      )
+    }
+
+    this.cierraModal()
+  }
+
+
 
   //   title = 'mcalendar';
   //   data = [{

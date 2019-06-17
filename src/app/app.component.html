@@ -3,11 +3,35 @@
 
 <button type="button" name="button" (click)="modal()"></button>
 
-<div id="boxmodalDefault" class="boxmodal">
+<div id="boxmodalDefault" class="boxmodal ">
   <div class="boxmodal-content" id="box-c">
     <div class="boxmodal-header header-default">
       <span class="boxmodal-header-title">Agendar nueva cita {{boxfecha}}</span>
       <a (click)="cierraModal()" class="header-btn-close">&#215;</a>
+    </div>
+    <div class="bodybox">
+      <div class="box-datos">
+        <input class="name" type="text" placeholder="identidad" #id />
+        <input class="name" type="text" placeholder="Nombre" #nombre />
+        <textarea name="name" rows="2" placeholder="Ingrese el motico" #motivo></textarea>
+        <textarea name="name" rows="2" placeholder="Ingrese un recordatorio" #recordatorio></textarea>
+
+      </div>
+      <div class="box-hora">
+        <span class="txt-hora">Seleccione la hora para la cita</span>
+        <ul class="calender-hora">
+          <li class="time " (click)="hora='8:00'">8:00 </li>
+          <li class="time " (click)="hora='9:00'">9:00 </li>
+          <li class="time " (click)="hora='10:00'">10:00 </li>
+          <li class="time " (click)="hora='11:00'">11:00 </li>
+          <li class="time " (click)="hora='11:00'">11:00 </li>
+          <li class="time " (click)="hora='11:30'">11:30 </li>
+        </ul>
+      </div>
+      <div class="botont">
+        <button type="button" name="button" class="btn-termina" (click)="agendar(id.value, nombre.value)">AGENDAR</button>
+
+      </div>
     </div>
   </div>
 </div>
