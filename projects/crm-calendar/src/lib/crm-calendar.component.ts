@@ -175,7 +175,6 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
       this.agrega.emit(date)
     }
   }
-
   verCita(fecha, id) {
     let v = { fecha: fecha, id: id }
     this.vC.emit(v)

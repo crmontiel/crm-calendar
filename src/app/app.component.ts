@@ -11,38 +11,11 @@ export class AppComponent implements OnInit {
   hora: ""
   constructor() {
 
-    console.log(this.validaFecha('16/6/2019', '17/6/2019'))
-    console.log(new Date().getMonth())
 
   }
 
   ngOnInit() {
   }
-  validaFecha(n1, n2) {
-    let re = false
-    let f1 = n1.split('/')
-    let f2 = n2.split('/')
-
-    if (+f1[2] > +f2[2]) { //anio mayor
-      re = true;
-      console.log("#1")
-    } else if (+f1[2] == +f2[2]) { //anio igual
-
-      if (+f1[1] > +f2[1]) {// mes mayor
-        re = true;
-      } else if (+f1[1] == +f2[1]) {
-
-        if (+f1[0] >= +f2[0]) {
-          re = true;
-        }
-      }
-
-    }
-    return re;
-  }
-
-
-
   c = [
     {
       date: '25/7/2019',
@@ -81,18 +54,7 @@ export class AppComponent implements OnInit {
     }
   ]
 
-  mas() {
-    this.c[0].list.push({
-      hour: '11:00',
-      txt: 'MAS',
-      id: '0102-1997-00059'
-    })
-    // console.log(this.c)
-  }
-
-
   nuevaCita(event) {
-
     this.boxfecha = event
     document.getElementById('boxmodalDefault').classList.add('bxopen')
     document.getElementById('box-c').classList.add('boxmo')

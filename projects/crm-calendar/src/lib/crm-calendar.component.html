@@ -1,9 +1,9 @@
 <div class="wrapper">
-  <h3 id="monthAndYear"></h3>
   <div class="button-container-calendar">
     <button id="next" (click)="next()">&#8250;</button>
     <button id="nowday" (click)="nowday()">{{diatexto}}</button>
     <button id="previous" (click)="previous()">&#8249;</button>
+    <h3 id="monthAndYear"></h3>
   </div>
   <table class="table-calendar" id="calendar" data-lang="en">
     <thead id="thead-month"></thead>
@@ -16,8 +16,8 @@
             <div *ngFor="let c of citas;let ci=index">
               <div *ngIf="c.date==d.id">
                 <div *ngFor="let cspan of c.list;let ci=index">
-                  <span class="itemcita" *ngIf="ci<=2" (click)="verCita(d.id,cspan.id)">{{cspan.hour}} {{cspan.txt}} </span>
-                  <span class="itemcita mas" *ngIf="ci==3" (click)="verMas(d.id)">Ver mas </span>
+                  <span class="itemcita" *ngIf="ci<=1" (click)="verCita(d.id,cspan.id)">{{cspan.hour}} {{cspan.txt}} </span>
+                  <span class="itemcita mas" *ngIf="ci==2" (click)="verMas(d.id)">Ver mas </span>
                 </div>
               </div>
             </div>
