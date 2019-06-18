@@ -18,12 +18,18 @@
 }
 
 #thead-month {
-  background: #424242 !important;
-  color: #FFF !important;
+  background: #42424242 !important;
+  color: #424242 !important;
   font-size: 1.2rem !important;
+  font-weight: bold !important;
 }
 
 #thead-month th {
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
+table th {
   text-align: center !important;
 }
 

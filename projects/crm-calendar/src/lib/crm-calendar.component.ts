@@ -70,7 +70,7 @@ export class CrmCalendarComponent implements OnInit, OnChanges {
 
     var dataHead = "<tr>";
     for (var dhead in this.days) {
-      dataHead += "<th data-days='" + this.days[dhead] + "'>" + this.days[dhead] + "</th>";
+      dataHead += "<th data-days='" + this.days[dhead] + "' style='text-align:center!important;'>" + this.days[dhead] + "</th>";
     }
     dataHead += "</tr>";
     document.getElementById("thead-month").innerHTML = dataHead;
