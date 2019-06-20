@@ -36,6 +36,12 @@
       ],
       "crm-calendar/*": [
         "dist/crm-calendar/*"
+      ],
+      "mimi-calendar": [
+        "dist/mimi-calendar"
+      ],
+      "mimi-calendar/*": [
+        "dist/mimi-calendar/*"
       ]
     }
   }

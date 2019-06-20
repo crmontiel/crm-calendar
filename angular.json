@@ -219,6 +219,41 @@
           }
         }
       }
+    },
+    "mimi-calendar": {
+      "projectType": "library",
+      "root": "projects/mimi-calendar",
+      "sourceRoot": "projects/mimi-calendar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mimi-calendar/tsconfig.lib.json",
+            "project": "projects/mimi-calendar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mimi-calendar/src/test.ts",
+            "tsConfig": "projects/mimi-calendar/tsconfig.spec.json",
+            "karmaConfig": "projects/mimi-calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mimi-calendar/tsconfig.lib.json",
+              "projects/mimi-calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "mcalendar"
 }

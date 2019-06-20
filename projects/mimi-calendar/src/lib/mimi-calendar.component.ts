@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 
+
 @Component({
-  selector: 'crm-calendar',
-  templateUrl: './crm-calendar.component.html',
-  styleUrls: ['./crm-calendar.component.css']
+  selector: 'mimi-calendar',
+  templateUrl: './mimi-calendar.component.html',
+  styleUrls: ['./mimi-calendar.component.css']
 })
-export class CrmCalendarComponent implements OnInit, OnChanges {
+export class MimiCalendarComponent implements OnInit {
   @Input() citas = [];
   diatexto = ""
   choy = new Date()

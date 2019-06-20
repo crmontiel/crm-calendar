@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="button-container-calendar">
+    <button id="next" (click)="next()">&#8250;</button>
+    <button id="nowday" (click)="nowday()">{{diatexto}}</button>
+    <button id="previous" (click)="previous()">&#8249;</button>
+    <h3 id="monthAndYear"></h3>
+  </div>
+  <table class="table-calendar" id="calendar" data-lang="en">
+    <thead id="thead-month"></thead>
+    <tbody id="calendar-body">
+      <tr *ngFor="let i of ArrayDays;let p=index">
+        <td *ngFor="let d of ArrayDays[p].dias" [attr.data-date]="d.id" [attr.id]="'f'+ d.id" class="date-picker">
+          <span class="txtd" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'t'+ d.id">{{d.dia}}</span>
+          <span class="bgtxtdia" *ngIf="d.dia!=0" [ngClass]="{'selected': d.hoy==true, 'nv': !existe(d.id)}" (click)="clickAgrega(d.id)" [attr.id]="'bg'+ d.id">{{d.dia}}</span>
+          <div class="lcitas" [ngClass]="{'nv': existe(d.id)}" *ngIf="d.dia!=0" [attr.id]="'lc'+ d.id">
+            <div *ngFor="let c of citas;let ci=index">
+              <div *ngIf="c.date==d.id">
+                <div *ngFor="let cspan of c.list;let ci=index">
+                  <!-- <span class="itemcita" *ngIf="ci<=1" (click)="verCita(d.id,cspan.id)">{{cspan.hour}} {{cspan.txt}} </span> -->
+                  <span class="itemcita mas" *ngIf="ci==0" (click)="verMas(d.id)">Ver citas </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

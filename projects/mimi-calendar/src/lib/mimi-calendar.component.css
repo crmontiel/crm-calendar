@@ -1,0 +1,212 @@
+.wrapper {
+  margin: 2px auto;
+  max-width: 95%;
+  /* min-width: 100% !important; */
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  /* position: absolute; */
+}
+
+.container-calendar {
+  background: #ffffff;
+  /* padding: 15px; */
+  /* max-width: 475px; */
+  margin: 0 auto;
+  overflow: auto;
+}
+
+#thead-month {
+  background: #42424242 !important;
+  color: #424242 !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+}
+
+#thead-month th {
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
+table th {
+  text-align: center !important;
+}
+
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100% !important;
+}
+
+.table-calendar td, .table-calendar th {
+  padding: 2px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+
+.date-picker.selected {
+  font-weight: bold;
+  outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* sunday */
+.date-picker:nth-child(1) .bgtxtdia, .date-picker:nth-child(1) .txtd {
+  color: #e83737 !important;
+}
+
+/* friday */
+/* .date-picker:nth-child(6) .bgtxtdia {
+  color: green;
+} */
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+  padding-right: 2%;
+  float: right;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+  text-align: right !important;
+}
+
+#previous {
+  float: right !important;
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+
+#nowday {
+  float: right !important;
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+
+#next {
+  float: right !important;
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+.footer-container-calendar select {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+
+tbody td {
+  height: 35px !important;
+  position: relative;
+}
+
+/* td {
+  position: relative;
+} */
+td span {
+  float: right !important;
+}
+
+td:hover .bgtxtdia, .txtd:hover {
+  background: #42424233;
+  /* background: #42424242; */
+  cursor: pointer;
+}
+
+.nc {
+  cursor: default !important;
+}
+
+.nc:hover {
+  cursor: default !important;
+}
+
+.mas {
+  background: rgb(0, 176, 79) !important;
+}
+
+.mas:hover {
+  background: rgb(54, 217, 127) !important;
+}
+
+.itemcita {
+  width: 100% !important;
+  font-size: 14px;
+  color: #FFF;
+  background: rgb(36, 160, 182);
+  float: left;
+  margin-bottom: 2px !important;
+}
+
+.itemcita:hover {
+  background: rgb(42, 194, 222);
+}
+
+.itemcita:hover {
+  cursor: pointer !important;
+}
+
+.bgtxtdia {
+  width: 100% !important;
+  height: 35px !important;
+  font-size: 1.5rem;
+  /* display: none; */
+  color: #42424242;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.txtd {
+  /* display: none; */
+  color: #42424242;
+  font-weight: bold !important;
+  width: 100%;
+  text-align: right;
+}
+
+.nv {
+  display: none !important;
+}
+
+.lcitas {
+  z-index: 0 !important;
+  /* background: rgba(235, 57, 57, 0.48) !important; */
+  width: 93% !important;
+  height: 25px;
+  margin-top: 20px;
+  display: block;
+  text-decoration: none !important;
+  position: absolute;
+}
